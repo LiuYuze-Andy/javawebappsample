@@ -42,7 +42,7 @@ node {
       def ftpProfile = getFtpPublishProfile pubProfilesJson
 
       // 上传 WAR 包
-      sh "curl -T target/calculator-1.0.war $ftpProfile.url/webapps/ROOT.war -u '$ftpProfile.username:$ftpProfile.password'"
+      sh "curl -T target/calculator-1.0.war $ftpProfile.url/ROOT.war -u '$ftpProfile.username:$ftpProfile.password'"
 
       // 退出 Azure 登录
       sh 'az logout'
